@@ -1,0 +1,290 @@
+html {
+    background-color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pokemon */
+
+.pokemon-container {
+    display: inline-block; /* Affiche les éléments sur une même ligne */
+    text-align: center; /* Pour centrer le contenu */
+    border-radius: 10px;
+    background-color: #333333;
+    border: solid white 1px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Pour que la hauteur soit à 100% du conteneur parent */
+}
+
+.red-column {
+    background-color: #045DBB; /* Couleur de fond rouge pour la colonne à 1 */
+}
+
+.pokemon-name {
+    margin-top: 5px; /* Espacement entre l'image et le nom */
+    font-weight: bold;
+}
+
+.info {
+    border-radius: 10px;
+    text-align: center;
+    background-color: #333333;
+    margin-top: 5px;
+    border: solid white 1px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:white;
+}
+
+
+.pokemon-container:hover {
+    cursor: pointer; /* Change le curseur en une main pointant vers quelque chose lorsqu'il survole une case */
+}
+
+.pokemon-container .info {
+    flex-grow: 1; /* Pour que cette div prenne tout l'espace restant en hauteur */
+}
+
+td{
+    padding-right: 20px;
+}
+
+.SLD{
+    background-color: #474747;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid white 1px;
+}
+
+.table-container{
+    margin-bottom: 1em;
+    border: white 1px solid;
+    padding: 1em;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    background-color: #474747;
+}
+.table-container th{
+    border: solid 1px white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Header */
+header {
+    background-color: #297AD0; /* Bleu */
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: solid white 1px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    height: 80px; /* Ajuster la hauteur du logo */
+    width: auto;
+    margin-left: 20px;
+}
+
+/* Menu */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 1px solid #fff; /* Blanc */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #fff; /* Blanc */
+    color: #297AD0; /* Bleu */
+}
+
+/* Footer */
+footer {
+    background-color: #297AD0;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: solid white 1px;
+    margin-top: 20px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-grow: 1;
+}
+
+/* Connexion */
+
+.container {
+    width: 400px; /* Largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    margin-top: 50px; /* Marge supérieure pour espacement */
+    margin-bottom: 50px;
+    background-color: #474747;
+    padding: 50px;
+    border-radius: 10px;
+    border: solid white 1px;
+}
+.form-group {
+    margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+}
+.form-control {
+    width: 90%; /* Largeur de 100% */
+    padding: 10px; /* Remplissage */
+    border-radius: 5px; /* Bord arrondi */
+    border: 1px solid #ccc; /* Bordure */
+}
+.btn-primary {
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bord arrondi */
+    cursor: pointer; /* Curseur */
+    transition: all 0.3s ease;
+    border: 1px solid #fff; /* Blanc */
+    background: none;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #fff; /* Blanc */
+    color: #297AD0; /* Bleu */
+}
+
+/* Accueil */
+
+.accueil{
+    display: flex;
+    margin-left: 30em;
+    margin-right: 25em;
+}
+
+.info_SLD{
+    border: 1px solid white;
+    background-color: #474747;
+    width: 55%;
+    margin-right: 2em;
+    color: white;
+    font-weight: bold;
+    text-align: justify;
+}
+.info_SLD img{
+    margin-bottom: -1em;
+}
+.info_SLD p{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.info_SLD h2{
+    margin-left: 1.3em;
+}
+.comparaisonShiny{
+    display: flex;
+}
+.comparaisonShiny img{
+    margin-top: -4em;
+}
+
+.info_avancement{
+    border: 1px solid white;
+    background-color: #474747;
+    color: white;
+    font-weight: bold;
+}
+.info_avancement h1,h3{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.info_avancement p{
+    padding-left: 1.2em;
+    margin-bottom: -0.3em;
+}
+
+.info_reseaux{
+    border: 1px solid white;
+    background-color: #474747;
+    color: white;
+    font-weight: bold;
+}
+.info_reseaux img{
+    margin-top: -0.5em;
+    padding-bottom: 0.5em;
+}
+
+/* Edit Shiny */
+
+.editShiny {
+    width: 400px; /* Largeur du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    margin-top: 50px; /* Marge supérieure pour espacement */
+    margin-bottom: 50px;
+    background-color: #474747;
+    padding: 50px;
+    border-radius: 10px;
+    border: solid white 1px;
+    color: white;
+    font-weight: bold;
+}
+.editShiny .form-group {
+    margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+}
+.editShiny input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+.editShiny .btn-primary {
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bord arrondi */
+    cursor: pointer; /* Curseur */
+    transition: all 0.3s ease;
+    border: 1px solid #fff; /* Blanc */
+    background: none;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #fff; /* Blanc */
+    color: #297AD0; /* Bleu */
+}
