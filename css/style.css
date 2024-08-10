@@ -6,25 +6,32 @@ html {
 /* Pokemon */
 
 .pokemon-container {
-    display: inline-block; /* Affiche les éléments sur une même ligne */
-    text-align: center; /* Pour centrer le contenu */
+    display: inline-block;
+    /* Affiche les éléments sur une même ligne */
+    text-align: center;
+    /* Pour centrer le contenu */
     border-radius: 10px;
     background-color: #333333;
     border: solid white 1px;
-    color:white;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Pour que la hauteur soit à 100% du conteneur parent */
+    height: 100%;
+    /* Pour que la hauteur soit à 100% du conteneur parent */
 }
 
 .red-column {
-    background-color: #045DBB; /* Couleur de fond rouge pour la colonne à 1 */
+    background-color: #045DBB;
+    /* Couleur de fond rouge pour la colonne à 1 */
 }
 
 .pokemon-name {
-    margin-top: 5px; /* Espacement entre l'image et le nom */
+    margin-top: 5px;
+    /* Espacement entre l'image et le nom */
     font-weight: bold;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 
 .info {
@@ -36,30 +43,32 @@ html {
     margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    color:white;
+    color: white;
 }
 
 
 .pokemon-container:hover {
-    cursor: pointer; /* Change le curseur en une main pointant vers quelque chose lorsqu'il survole une case */
+    cursor: pointer;
+    /* Change le curseur en une main pointant vers quelque chose lorsqu'il survole une case */
 }
 
 .pokemon-container .info {
-    flex-grow: 1; /* Pour que cette div prenne tout l'espace restant en hauteur */
+    flex-grow: 1;
+    /* Pour que cette div prenne tout l'espace restant en hauteur */
 }
 
-td{
+td {
     padding-right: 20px;
 }
 
-.SLD{
+.SLD {
     background-color: #474747;
     padding: 30px;
     border-radius: 10px;
     border: solid white 1px;
 }
 
-.table-container{
+.table-container {
     margin-bottom: 1em;
     border: white 1px solid;
     padding: 1em;
@@ -68,19 +77,40 @@ td{
     border-radius: 10px;
     background-color: #474747;
 }
-.table-container th{
+
+.table-container th {
     border: solid 1px white;
     border-radius: 10px;
     padding: 10px;
 }
 
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    /* Align the text vertically */
+    white-space: nowrap;
+}
+
 /* Header */
 header {
-    background-color: #297AD0; /* Bleu */
+    background-color: #297AD0;
+    /* Bleu */
     padding: 20px 0;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: solid white 1px;
 }
 
@@ -92,7 +122,8 @@ header {
 
 /* Logo */
 .logo img {
-    height: 80px; /* Ajuster la hauteur du logo */
+    height: 80px;
+    /* Ajuster la hauteur du logo */
     width: auto;
     margin-left: 20px;
 }
@@ -116,14 +147,17 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     padding: 10px 20px;
-    border: 1px solid #fff; /* Blanc */
+    border: 1px solid #fff;
+    /* Blanc */
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .menu li a:hover {
-    background-color: #fff; /* Blanc */
-    color: #297AD0; /* Bleu */
+    background-color: #fff;
+    /* Blanc */
+    color: #297AD0;
+    /* Bleu */
 }
 
 /* Footer */
@@ -131,7 +165,7 @@ footer {
     background-color: #297AD0;
     padding: 20px 0;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: solid white 1px;
     margin-top: 20px;
 }
@@ -153,49 +187,69 @@ footer {
 /* Connexion */
 
 .container {
-    width: 400px; /* Largeur du conteneur */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
-    margin-top: 50px; /* Marge supérieure pour espacement */
+    width: 400px;
+    /* Largeur du conteneur */
+    margin: 0 auto;
+    /* Centre le conteneur horizontalement */
+    margin-top: 50px;
+    /* Marge supérieure pour espacement */
     margin-bottom: 50px;
     background-color: #474747;
     padding: 50px;
     border-radius: 10px;
     border: solid white 1px;
 }
+
 .form-group {
-    margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+    margin-bottom: 20px;
+    /* Espacement entre les éléments du formulaire */
 }
+
 .form-control {
-    width: 90%; /* Largeur de 100% */
-    padding: 10px; /* Remplissage */
-    border-radius: 5px; /* Bord arrondi */
-    border: 1px solid #ccc; /* Bordure */
+    width: 90%;
+    /* Largeur de 100% */
+    padding: 10px;
+    /* Remplissage */
+    border-radius: 5px;
+    /* Bord arrondi */
+    border: 1px solid #ccc;
+    /* Bordure */
 }
+
 .btn-primary {
-    color: #fff; /* Couleur du texte */
-    padding: 10px 20px; /* Remplissage */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Bord arrondi */
-    cursor: pointer; /* Curseur */
+    color: #fff;
+    /* Couleur du texte */
+    padding: 10px 20px;
+    /* Remplissage */
+    border: none;
+    /* Pas de bordure */
+    border-radius: 5px;
+    /* Bord arrondi */
+    cursor: pointer;
+    /* Curseur */
     transition: all 0.3s ease;
-    border: 1px solid #fff; /* Blanc */
+    border: 1px solid #fff;
+    /* Blanc */
     background: none;
     font-weight: bold;
 }
+
 .btn-primary:hover {
-    background-color: #fff; /* Blanc */
-    color: #297AD0; /* Bleu */
+    background-color: #fff;
+    /* Blanc */
+    color: #297AD0;
+    /* Bleu */
 }
 
 /* Accueil */
 
-.accueil{
+.accueil {
     display: flex;
     margin-left: 30em;
     margin-right: 25em;
 }
 
-.info_SLD{
+.info_SLD {
     border: 1px solid white;
     background-color: #474747;
     width: 55%;
@@ -204,45 +258,54 @@ footer {
     font-weight: bold;
     text-align: justify;
 }
-.info_SLD img{
+
+.info_SLD img {
     margin-bottom: -1em;
 }
-.info_SLD p{
+
+.info_SLD p {
     margin-left: 2em;
     margin-right: 2em;
 }
-.info_SLD h2{
+
+.info_SLD h2 {
     margin-left: 1.3em;
 }
-.comparaisonShiny{
+
+.comparaisonShiny {
     display: flex;
 }
-.comparaisonShiny img{
+
+.comparaisonShiny img {
     margin-top: -4em;
 }
 
-.info_avancement{
+.info_avancement {
     border: 1px solid white;
     background-color: #474747;
     color: white;
     font-weight: bold;
 }
-.info_avancement h1,h3{
+
+.info_avancement h1,
+h3 {
     padding-left: 1em;
     padding-right: 1em;
 }
-.info_avancement p{
+
+.info_avancement p {
     padding-left: 1.2em;
     margin-bottom: -0.3em;
 }
 
-.info_reseaux{
+.info_reseaux {
     border: 1px solid white;
     background-color: #474747;
     color: white;
     font-weight: bold;
 }
-.info_reseaux img{
+
+.info_reseaux img {
     margin-top: -0.5em;
     padding-bottom: 0.5em;
 }
@@ -250,9 +313,12 @@ footer {
 /* Edit Shiny */
 
 .editShiny {
-    width: 400px; /* Largeur du conteneur */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
-    margin-top: 50px; /* Marge supérieure pour espacement */
+    width: 400px;
+    /* Largeur du conteneur */
+    margin: 0 auto;
+    /* Centre le conteneur horizontalement */
+    margin-top: 50px;
+    /* Marge supérieure pour espacement */
     margin-bottom: 50px;
     background-color: #474747;
     padding: 50px;
@@ -261,10 +327,14 @@ footer {
     color: white;
     font-weight: bold;
 }
+
 .editShiny .form-group {
-    margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+    margin-bottom: 20px;
+    /* Espacement entre les éléments du formulaire */
 }
-.editShiny input[type=number], select {
+
+.editShiny input[type=number],
+select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -272,19 +342,29 @@ footer {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
+
 .editShiny .btn-primary {
-    color: #fff; /* Couleur du texte */
-    padding: 10px 20px; /* Remplissage */
-    border: none; /* Pas de bordure */
-    border-radius: 5px; /* Bord arrondi */
-    cursor: pointer; /* Curseur */
+    color: #fff;
+    /* Couleur du texte */
+    padding: 10px 20px;
+    /* Remplissage */
+    border: none;
+    /* Pas de bordure */
+    border-radius: 5px;
+    /* Bord arrondi */
+    cursor: pointer;
+    /* Curseur */
     transition: all 0.3s ease;
-    border: 1px solid #fff; /* Blanc */
+    border: 1px solid #fff;
+    /* Blanc */
     background: none;
     font-weight: bold;
 }
+
 .btn-primary:hover {
-    background-color: #fff; /* Blanc */
-    color: #297AD0; /* Bleu */
+    background-color: #fff;
+    /* Blanc */
+    color: #297AD0;
+    /* Bleu */
 }

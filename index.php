@@ -35,7 +35,8 @@
                 $totalPKM7G = $conn->query("SELECT COUNT(*) AS total7G FROM pkm WHERE generation=7")->fetch();
                 $totalPKM8G = $conn->query("SELECT COUNT(*) AS total8G FROM pkm WHERE generation=8")->fetch();
                 $totalPKM9G = $conn->query("SELECT COUNT(*) AS total9G FROM pkm WHERE generation=9")->fetch();
-                $totalPKMForme = $conn->query("SELECT COUNT(*) AS totalForme FROM pkm WHERE generation=0")->fetch();
+                $totalPKMForme = $conn->query("SELECT COUNT(*) AS totalForme FROM pkm_form")->fetch();
+
                 $totalPKM = $conn->query("SELECT COUNT(*) AS total FROM pkm")->fetch();
                 $totalPKMObtenue1G = $conn->query("SELECT COUNT(*) AS totalObtenue1G FROM pkm WHERE obtenue =1 AND generation=1")->fetch();
                 $totalPKMObtenue2G = $conn->query("SELECT COUNT(*) AS totalObtenue2G FROM pkm WHERE obtenue =1 AND generation=2")->fetch();
@@ -46,7 +47,7 @@
                 $totalPKMObtenue7G = $conn->query("SELECT COUNT(*) AS totalObtenue7G FROM pkm WHERE obtenue =1 AND generation=7")->fetch();
                 $totalPKMObtenue8G = $conn->query("SELECT COUNT(*) AS totalObtenue8G FROM pkm WHERE obtenue =1 AND generation=8")->fetch();
                 $totalPKMObtenue9G = $conn->query("SELECT COUNT(*) AS totalObtenue9G FROM pkm WHERE obtenue =1 AND generation=9")->fetch();
-                $totalPKMObtenueForme = $conn->query("SELECT COUNT(*) AS totalObtenueForme FROM pkm WHERE obtenue =1 AND generation=0")->fetch();
+                $totalPKMObtenueForme = $conn->query("SELECT COUNT(*) AS totalObtenueForme FROM pkm_form WHERE obtenue =1")->fetch();
                 $totalPKMObtenue = $conn->query("SELECT COUNT(*) AS totalObtenue FROM pkm WHERE obtenue =1")->fetch();
                 ?>
                 <p>Première génération : <?php echo $totalPKMObtenue1G['totalObtenue1G'] ?> / <?php echo $totalPKM1G['total1G'] ?></p>
@@ -64,7 +65,8 @@
             <br>
             <div class="info_reseaux">
                 <center><h1>Réseaux</h1>
-                <a href="https://www.twitch.tv/ewox__"><img src="images/logotwitch.png"  width="100" height="100"></a></center>
+                <a href="https://www.twitch.tv/ewox__"><img src="images/logotwitch.png"  width="100" height="100"></a>
+                <a href="https://twitter.com/EwoxYT"><img src="images/logoX.png"  width="90" height="95"></a></center>
             </div>
         </div>
     </div>

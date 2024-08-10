@@ -11,6 +11,7 @@
             <th><a href="8g.php" style="color: white; text-decoration: none;">8G</th>
             <th><a href="9g.php" style="color: white; text-decoration: none;">9G</th>
             <th><a href="forme.php" style="color: white; text-decoration: none;">Forme</th>
+            <th><a href="allg.php" style="color: white; text-decoration: none;">All</th>
         </tr>
     </table>
 </div>

@@ -1,4 +1,4 @@
-<?php include('navGeneration.php') ?>
+<?php include('navGeneration.php') ?> 
     <center><table class="SLD">
         <?php
         $td_count = 0;
