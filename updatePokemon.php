@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['nom_compte'])) {
         $conn = connexion();
         $pokemon_id = $_POST['pokemon_id'];
         $methode_id = $_POST['methode'];
+        $jeu_id = $_POST['jeu'];
         $compteur = $_POST['compteur'];
 
         // Récupération de la colonne "generation" du Pokémon
@@ -20,10 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['nom_compte'])) {
         $generation = $row['generation'];
 
         // Mise à jour des informations dans la base de données
-        $stmt = $conn->prepare("UPDATE pkm SET methode = :methode, compteur = :compteur WHERE id_pkm = :id_pkm");
+        $stmt = $conn->prepare("UPDATE pkm SET methode = :methode, compteur = :compteur, jeu = :jeu WHERE id_pkm = :id_pkm");
         $stmt->bindParam(':id_pkm', $pokemon_id);
         $stmt->bindParam(':compteur', $compteur);
         $stmt->bindParam(':methode', $methode_id);
+        $stmt->bindParam(':jeu', $jeu_id);
         $stmt->execute();
 
         // Redirection vers la page 1g.php après la mise à jour

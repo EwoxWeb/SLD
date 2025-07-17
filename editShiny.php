@@ -5,6 +5,7 @@ if(isset($_GET['id'])) {
     $pokemon_info = $conn->query("SELECT * FROM pkm WHERE id_pkm = $pokemon_id")->fetch();
     $pokemon_nom = $pokemon_info['nom_pkm'];
     $methode_id = $pokemon_info['methode'];
+    $jeu_id = $pokemon_info['jeu'];
     $compteur = $pokemon_info['compteur'];
 ?>
 <body>
@@ -30,6 +31,21 @@ if(isset($_GET['id'])) {
             <div class="form-group">
                 <label for="compteur">Compteur</label>
                 <input type="number" name="compteur" id="compteur" value="<?php echo $compteur; ?>">
+            </div>
+            <div class="form-group">
+                <label for="jeu">Jeu</label>
+                <select name="jeu" id="jeu">
+                    <?php
+                    $jeux = $conn->query("SELECT * FROM jeux order by id_jeu");
+                    while ($jeu = $jeux->fetch()) {
+                        if ($jeu['id_jeu'] == $jeu_id) {
+                            echo '<option value="' . $jeu['id_jeu'] . '" selected>' . $jeu['nom_jeu'] . '</option>';
+                        } else {
+                            echo '<option value="' . $jeu['id_jeu'] . '">' . $jeu['nom_jeu'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Enregistrer">
