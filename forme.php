@@ -11,7 +11,7 @@ $conn = connexion();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="Images/logo en haut à gauche.png" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="Images/logo en haut à gauche.png" type="image/x-icon" />
     <title>SLD</title>
 </head>
 <header>
@@ -30,65 +30,66 @@ $conn = connexion();
         </div>
     </div>
 </header>
+
 <body>
     <?php
     $pkm = $conn->query("SELECT * FROM pkm_form");
-    include('navGeneration.php') ?> 
-    <center><table class="SLD">
-        <?php
-        $td_count = 0;
-        while ($row = $pkm->fetch()) {
-            $path = 'images/Shiny/' . $row['img'];
-            $pokemonClass = $row['obtenue'] == 1 ? 'pokemon-container red-column' : 'pokemon-container';
-            if ($td_count % 9 == 0) {
-                echo "<tr>";
+    include('navGeneration.php') ?>
+    <center>
+        <table class="SLD">
+            <?php
+            $td_count = 0;
+            while ($row = $pkm->fetch()) {
+                $path = 'images/Shiny/' . $row['img'];
+                $pokemonClass = $row['obtenue'] == 1 ? 'pokemon-container red-column' : 'pokemon-container';
+                if ($td_count % 9 == 0) {
+                    echo "<tr>";
+                }
+            ?>
+                <td>
+                    <div class="<?php echo $pokemonClass; ?>" onclick="toggleObtenue(<?php echo $row['id_pkm']; ?>)">
+                        <center><img src="<?php echo $path; ?>" alt="Image" width="100" height="100"></center>
+                        <p class="pokemon-name"><?php echo $row['nom_pkm'] . "&nbsp #" . $row['numero']; ?></p>
+                    </div>
+                    <?php $methode = $conn->query("SELECT nom_methode FROM methode WHERE id_methode =" . $row['methode'])->fetch(); ?>
+                    <div class="info">
+                        <?php echo $methode['nom_methode']; ?> <br />En <?php echo $row['compteur'];
+                                                                        if (isset($_SESSION['nom_compte'])) {
+                                                                            if ($_SESSION['nom_compte'] == 'Ewox_') {
+                                                                        ?>
+                                <a href="editShiny_form.php?id=<?php echo $row['id_pkm']; ?>"><i class="fas fa-pencil-alt" style="text-align:right; color: white;"></i></a>
+                        <?php }
+                                                                        } ?>
+                    </div>
+                </td>
+            <?php
+                $td_count++;
+                if ($td_count % 9 == 0) {
+                    echo "</tr>";
+                }
             }
-        ?>
-            <td>
-                <div class="<?php echo $pokemonClass; ?>" onclick="toggleObtenue(<?php echo $row['id_pkm']; ?>)">
-                    <center><img src="<?php echo $path; ?>" alt="Image" width="100" height="100"></center>
-                    <p class="pokemon-name"><?php echo $row['nom_pkm'] . "&nbsp #" . $row['numero']; ?></p>
-                </div>
-                <?php $methode = $conn->query("SELECT nom_methode FROM methode WHERE id_methode =" . $row['methode'])->fetch(); ?>
-                <div class="info">
-                    <?php echo $methode['nom_methode']; ?> <br/>En <?php echo $row['compteur'];
-                    if (isset($_SESSION['nom_compte'])) {
-                        if ($_SESSION['nom_compte'] == 'Ewox_') {
-                    ?>
-                    <a href="editShiny.php?id=<?php echo $row['id_pkm']; ?>"><i class="fas fa-pencil-alt" style="text-align:right; color: white;"></i></a>
-                    <?php } }?>
-                </div>
-            </td>
-        <?php
-            $td_count++;
-            if ($td_count % 9 == 0) {
-                echo "</tr>";
-            }
-        }
-        ?>
-    </table></center>
+            ?>
+        </table>
+    </center>
     <?php include('footer.php'); ?>
 </body>
-    ?>
+?>
+
 </html>
 <script>
     function toggleObtenue(id) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "update_obtenue_form.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Réponse reçue du serveur, vous pouvez mettre à jour l'interface utilisateur si nécessaire
-            location.reload(); // Recharge la page pour afficher les mises à jour
-        }
-    };
-    xhr.send("id_pkm=" + id);
-}
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "update_obtenue_form.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                location.reload();
+            }
+        };
+        xhr.send("id_pkm=" + id);
+    }
 
-function editInfo(pkmId, methodName, counter) {
-    // Vous pouvez utiliser ici une bibliothèque de modale ou simplement afficher un div pour l'édition
-    // Par exemple, vous pouvez utiliser Bootstrap pour une modale
-    // Ici, je montre simplement une alerte pour illustrer le concept
-    alert("Modifier les informations pour le Pokémon avec l'ID: " + pkmId + "\nMéthode: " + methodName + "\nCompteur: " + counter);
-}
+    function editInfo(pkmId, methodName, counter) {
+        alert("Modifier les informations pour le Pokémon avec l'ID: " + pkmId + "\nMéthode: " + methodName + "\nCompteur: " + counter);
+    }
 </script>

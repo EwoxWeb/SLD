@@ -16,7 +16,7 @@ if(isset($_GET['id'])) {
                 <label for="methode">Méthode</label>
                 <select name="methode" id="methode">
                     <?php
-                    $methodes = $conn->query("SELECT * FROM methode");
+                    $methodes = $conn->query("SELECT * FROM methode order by nom_methode");
                     while ($methode = $methodes->fetch()) {
                         if ($methode['id_methode'] == $methode_id) {
                             echo '<option value="' . $methode['id_methode'] . '" selected>' . $methode['nom_methode'] . '</option>';
